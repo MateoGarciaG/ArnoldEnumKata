@@ -43,4 +43,13 @@ public enum Planeta {
         return this.masaHumano(peso) * this.gravedadEnSuperficie();
     }
 
+    public static EnumSet<Planeta> getPlanetasTerrestres() {
+		
+        return EnumSet.range(Planeta.MERCURY, Planeta.MARS);
+	}
+
+	public static EnumSet<Planeta> getGigantesGaseosos() {
+		return EnumSet.range(Planeta.JUPITER, Planeta.NEPTUNE);
+	}
+
 }
