@@ -19,13 +19,15 @@ public class ArnoldEnumTypeTest {
 	@BeforeClass
 	public static void CreacionArrayPlanetasSetup(){
 		planetas = new String[8];
-		int planetasIncluidos = 0;
-		for(Planeta planeta : Planeta.values()){
-			planetas[planeta.ordinal()] = planeta.name();
-			planetasIncluidos += 1;
-		}
+		// int planetasIncluidos = 0;
+		// for(Planeta planeta : Planeta.values()){
+		// 	planetas[planeta.ordinal()] = planeta.name();
+		// 	planetasIncluidos += 1;
+		// }
 		
-		
+		Arrays.stream(Planeta.values()).forEach(p -> planetas[p.ordinal()] = p.name());
+
+		int planetasIncluidos = (int) Arrays.stream(Planeta.values()).count();
 
 		assertThat(planetasIncluidos).isEqualTo(Planeta.values().length);
 	}
