@@ -30,4 +30,17 @@ public enum Planeta {
         return this.radio;
     }
 
+    public double masaHumano(double peso) {
+        return peso / EARTH.gravedadEnSuperficie();
+    }
+
+    public double gravedadEnSuperficie() {
+        return G * (this.getMasa() / (this.getRadio() * this.getRadio()));
+    }
+
+    public double pesoSuperficie(double peso) {
+
+        return this.masaHumano(peso) * this.gravedadEnSuperficie();
+    }
+
 }
