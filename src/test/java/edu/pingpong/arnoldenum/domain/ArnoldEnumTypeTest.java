@@ -31,8 +31,7 @@ public class ArnoldEnumTypeTest {
 
 	@Test
 	public void PlanetaConstructorTest() {
-		// voy a asegurarme de que los metodos de los Enum Types
-		// se comportan como yo espero
+
 		Planeta planeta = Planeta.MERCURY;
 		assertThat(planeta).isInstanceOf(Planeta.class);
 		assertThat(planeta.ordinal()).isEqualTo(0);
