@@ -7,7 +7,7 @@ import edu.pingpong.arnoldenum.domain.*;
  * Hello world!
  *
  */
-public class App 
+public class TuPesoPlanetas 
 {
     public static void main(String[] args) {
 		 
