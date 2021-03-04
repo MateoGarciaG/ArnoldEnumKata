@@ -1,11 +1,13 @@
 package edu.pingpong.arnoldenum;
 
+import java.util.*;
+
 import edu.pingpong.arnoldenum.domain.*;
 /**
  * Hello world!
  *
  */
-public class App 
+public class TuPesoPlanetas 
 {
     public static void main(String[] args) {
 		 
@@ -24,5 +26,7 @@ public class App
         for(Planeta planeta: Planeta.getGigantesGaseosos()){
             System.out.printf("Your weight on %s is %f N%n", planeta.name(), planeta.pesoSuperficie(peso));
         }
+
+
     }
 }

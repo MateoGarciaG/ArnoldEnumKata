@@ -103,7 +103,7 @@
               <manifest>
                 <addClasspath>true</addClasspath>
                 <!-- MAIN CLASS: edu.pingpong.artifactNombre.nombreClaseMain -->
-                <mainClass>edu.pingpong.artifactNombre.nombreClaseMain</mainClass>
+                <mainClass>edu.pingpong.arnoldenum.TuPesoPlanetas</mainClass>
               </manifest>
               <manifestEntries>
                 <url>${project.url}</url>
