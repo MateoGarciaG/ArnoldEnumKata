@@ -15,7 +15,6 @@ This Kata consist of calculate the weight of a person on the different planets o
 ## Tabla de Contenidos
 
 1. [Salida de la Aplicación](#salidas-de-la-aplicacion)
-1. [Diagrama UML](#diagrama-uml)
 1. [Tecnologías Usadas](#tecnologias-usadas)
 1. [Reflexiones](#reflexiones)
 1. [Licencia](#licencia)
@@ -23,17 +22,10 @@ This Kata consist of calculate the weight of a person on the different planets o
 ---
 
 ## Salida de mi Aplicación
-![Project Salida Aplicacion](./doc/salida_consola.JPG)
+![Project Salida Aplicacion](./doc/salidaConsola.JPG)
 
 **[⬆ back to top](#tabla-de-contenidos)**
 
-
----
-
-## Diagrama UML
-![Project UML Diagram](./doc/diagrama_clases_UML.png)
-
-**[⬆ back to top](#tabla-de-contenidos)**
 
 ---
 
@@ -51,8 +43,8 @@ This Kata consist of calculate the weight of a person on the different planets o
 ---
 
 ## Reflexiones
+This Kara help me to improve how to handle and how works the ENUMS, their possibilities and the understanding of why ENUMS are so used.
 
-### Que has mejorado con este proyecto?
 
 **[⬆ back to top](#tabla-de-contenidos)**
 
