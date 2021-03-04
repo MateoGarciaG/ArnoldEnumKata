@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
+import java.util.stream.Collector;
 
 import edu.pingpong.arnoldenum.domain.*;
 
@@ -19,13 +20,10 @@ public class ArnoldEnumTypeTest {
 	@BeforeClass
 	public static void CreacionArrayPlanetasSetup(){
 		planetas = new String[8];
-		int planetasIncluidos = 0;
-		for(Planeta planeta : Planeta.values()){
-			planetas[planeta.ordinal()] = planeta.name();
-			planetasIncluidos += 1;
-		}
 		
-		
+		Arrays.stream(Planeta.values()).forEach(p -> planetas[p.ordinal()] = p.name());
+
+		int planetasIncluidos = (int) Arrays.stream(Planeta.values()).count();
 
 		assertThat(planetasIncluidos).isEqualTo(Planeta.values().length);
 	}
@@ -76,13 +74,15 @@ public class ArnoldEnumTypeTest {
 	public void ArrayPlanetasTerrestresTest(){
 
 		String[] planetasTerrestres = new String[4];
-		int planetasIncluidos = 0;
-		
-		for(int i=Planeta.MERCURY.ordinal(); i<Planeta.JUPITER.ordinal(); i++){
-			planetasTerrestres[i] = Planeta.values()[i].name();
-			planetasIncluidos += 1;
-		}
 
+
+			// sublist(): Nos permite hacer rangos de elementos de una lista.
+			// Donde el ultimo rango por defecto e le rest -1, como en python
+		Arrays.asList(Planeta.values()).subList(0, 4).stream().forEach(p -> planetasTerrestres[p.ordinal()] = p.name());
+
+
+		// Tuve que realizar Casting porque count() retornaba un LONG
+		int planetasIncluidos = (int) Arrays.asList(Planeta.values()).subList(0, 4).stream().count();
 		
 
 		assertThat(planetasIncluidos).isEqualTo(4);
@@ -96,14 +96,14 @@ public class ArnoldEnumTypeTest {
 	public void ArrayGigantesGaseosos(){
 
 		String[] gigantesGaseosos = new String[4];
-		int planetasIncluidos = 0;
-		
-		byte index = 0;
-		for(int i=Planeta.JUPITER.ordinal(); i<=Planeta.NEPTUNE.ordinal(); i++){
-			gigantesGaseosos[index] = Planeta.values()[i].name();
-			planetasIncluidos += 1;
-			index += 1;
-		}
+
+		// p.ordinal() sigue mantieniendo su index dentro de la lista de ENUM, por lo cual por ejemplo: URANUS, su index es 6. Y al introducirla dentro gigantesGaseosos[] el cual solo tiene 4 elementos, obviamente serán IndexOutOfRanges. Por lo cual al restarle -4, 6 -4: 2. El 2 si es un index de: gigantesGaseosos
+		Arrays.asList(Planeta.values()).subList(4, 8).stream().forEach(p -> gigantesGaseosos[p.ordinal()-4] = p.name());
+
+
+		// Tuve que realizar Casting porque count() retornaba un LONG
+		int planetasIncluidos = (int) Arrays.asList(Planeta.values()).subList(4, 8).stream().count();
+
 		assertThat(planetasIncluidos).isEqualTo(4);
 		
 		for(Planeta planeta : Planeta.getGigantesGaseosos()){
