@@ -28,22 +28,5 @@ public class App
         }
 
 
-        
-
-
-        String[] gigantesGaseosos = new String[4];
-
-        Arrays.asList(Planeta.values()).subList(4, 8).stream().forEach(p -> gigantesGaseosos[p.ordinal()-4] = p.name());
-
-		// Tuve que realizar Casting porque count() retornaba un LONG
-		int planetasIncluidos = (int) Arrays.asList(Planeta.values()).subList(4, 8).stream().peek(System.out::println).count();
-
-        System.out.println(planetasIncluidos);
-
-		
-		for(Planeta planeta : Planeta.getGigantesGaseosos()){
-			System.out.println(planeta);
-
-        }
     }
 }
